@@ -1,0 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace WebOdevi1.Models
+{
+    public class Musteri
+    {
+        [Key]
+        public int MusteriId { get; set; } // Anahtar ID
+        [Required]
+        public string Ad { get; set; } // Müşteri adı
+        public string TelefonNumarasi { get; set; } // Telefon numarası
+
+        public ICollection<Randevu> Randevular { get; set; } // Randevular ilişkisi
+    }
+}
