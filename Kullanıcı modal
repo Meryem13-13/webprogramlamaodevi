@@ -1,0 +1,10 @@
+using Microsoft.AspNetCore.Identity;
+
+namespace WebOdevi1.Models
+{
+    public class Kullanici : IdentityUser
+    {
+        public string AdSoyad { get; set; } // Kullanıcının adı soyadı
+        public ICollection<Randevu> Randevular { get; set; } // Kullanıcının randevuları
+    }
+}
