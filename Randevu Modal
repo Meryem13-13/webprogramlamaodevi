@@ -1,0 +1,28 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WebOdevi1.Models
+{
+    public class Randevu
+    {
+        [Key]
+        public int RandevuId { get; set; }
+        public DateTime RandevuTarihi { get; set; }
+
+        // Müşteri ilişkisi
+        public int MusteriId { get; set; }
+        [ForeignKey("MusteriId")]
+        public Musteri Musteri { get; set; }
+
+        // Hizmet ilişkisi
+        public int HizmetId { get; set; }
+        [ForeignKey("HizmetId")]
+        public Hizmet hizmet { get; set; }
+
+        // Çalışan ilişkisi
+        public int CalisanId { get; set; }
+        [ForeignKey("CalisanId")]
+        public Calisan Calisan { get; set; }
+    }
+}
